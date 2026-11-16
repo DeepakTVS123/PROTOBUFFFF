@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Connection Header Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E8F5E9"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvDeviceHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connected Device: --"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvGattState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GATT State: Connected"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:id="@+id/tvRssi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Live RSSI: -- dBm"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Telemetry Data Card -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📊 Vehicle Telemetry Data (Protobuf)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#F5F5F5"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvBatteryVoltage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Battery Voltage: 0.0 V"
+                android:textSize="15sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvWheelSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Speed: 0 km/h"
+                android:textSize="15sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvEngineRpm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Engine RPM: 0 RPM"
+                android:textSize="15sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvGearPosition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gear Position: N"
+                android:textSize="15sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvThrottlePosition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Throttle Position: 0.0 %"
+                android:textSize="15sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvFuelLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fuel Level: 0 %"
+                android:textSize="15sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvTyrePressure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tyre Pressure: Front 0.0 PSI | Rear 0.0 PSI"
+                android:textSize="15sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:id="@+id/tvStatusIndicators"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Indicators: MIL: OFF | ABS: OK | SideStand: UP"
+                android:textSize="14sp"
+                android:textColor="#333333" />
+        </LinearLayout>
+
+        <!-- User Data (Protobuf) Card -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="👤 User Data (UserData Proto)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E3F2FD"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Username (Max 32 chars)"
+                android:inputType="text"
+                android:maxLength="32"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password (8 - 32 chars)"
+                android:inputType="textPassword"
+                android:maxLength="32"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnSendUserData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send User Data Protobuf via BLE" />
+
+            <TextView
+                android:id="@+id/tvUserDataResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="User Data Result: --"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Passcode (Protobuf) Card -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔑 Passcode (PassCode Proto)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFF3E0"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/etPassCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter 4-Digit Passcode (e.g. 1234)"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnSendPassCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send Passcode Protobuf via BLE" />
+
+            <TextView
+                android:id="@+id/tvPassCodeResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Passcode Result: --"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnDisconnectTelemetry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disconnect &amp; Go Back" />
+
+    </LinearLayout>
+</ScrollView>
